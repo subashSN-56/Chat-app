@@ -6,9 +6,8 @@
     
 // })
 import axios from "axios";
-
+const BASE_UEL = import.meta.env.MODE === "development"?"https://localhost:5000/api":"/api"
 export const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: BASE_UEL,
   withCredentials: true,
 });
-console.log("Base URL:", import.meta.env.VITE_API_BASE_URL);
